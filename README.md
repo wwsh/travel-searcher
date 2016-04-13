@@ -22,9 +22,18 @@ a favorite date range, in which the trip should take place and number
  The former ones, exaclty matching, should be highlighted, the latter
  not.
 
- ## Example input
+The app is fully tested through functional tests.
 
+## Example input
 
+        Spain, 10 days, 01.07.2016 - 30.07.2016
+
+The output should be:
+
+        Madrid, 25.06 - 10.07.2016
+        Barcelona, 14.07 - 28.07.2016 (highlighted)
+
+The others not showing.
 
 ## How to install:
 
@@ -36,14 +45,22 @@ a favorite date range, in which the trip should take place and number
 
 Done.
 
-## Footnotes
+## Customization
 
+### Database
 The default database system for this app is a JSON file.
 There is support for ODM/ORM, though. A MySQL/Mongo driver has to
  be implemented as a DataProvider. An example, untested Mongo driver
  is available as MongoDataProvider.
  See DataProviderInterface for details on how to implement a new
  database driver.
+
+### Extending the engine
+
+The TravelSearcher class can be decomposed into smaller classes
+and the searching engine easily extended. An API interface should
+be provided for the engine and the front end should communicate
+purely via a REST API.
 
 
 
