@@ -1,0 +1,3 @@
+travel_engine_homepage:
+    path:     /
+    defaults: { _controller: TravelEngineBundle:Default:index }

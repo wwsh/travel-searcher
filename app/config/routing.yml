@@ -1,0 +1,5 @@
+travel_engine:
+    resource: "@TravelEngineBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

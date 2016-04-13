@@ -1,0 +1,8 @@
+services:
+  engine_data_provider:
+    class: TravelEngineBundle\DataProvider\JsonFileDataProvider
+    arguments: ['%json_data_file%']
+
+  travel.searcher:
+    class: TravelEngineBundle\Searcher\TravelSearcher
+    arguments: ["@engine_data_provider"]

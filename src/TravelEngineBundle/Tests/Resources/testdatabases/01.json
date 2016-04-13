@@ -1,0 +1,50 @@
+[
+  {
+    "country": "Spain",
+    "city": "Madrid",
+    "start_date": "25.06.2016",
+    "end_date": "10.07.2016"
+  },
+  {
+    "country": "Spain",
+    "city": "Barcelona",
+    "start_date": "14.07.2016",
+    "end_date": "28.07.2016"
+  },
+  {
+    "country": "Portugal",
+    "city": "Lisbon",
+    "start_date": "01.07.2016",
+    "end_date": "15.07.2016"
+  },
+  {
+    "country": "Spain",
+    "city": "Malaga",
+    "start_date": "25.07.2016",
+    "end_date": "15.08.2016"
+  },
+  {
+    "country": "Spain",
+    "city": "Toledo",
+    "start_date": "15.06.2016",
+    "end_date": "29.06.2016"
+  },
+  {
+    "country": "Poland",
+    "city": "Bydgoszcz",
+    "start_date": "30.07.2016",
+    "end_date": "15.08.2016"
+  },
+  {
+    "country": "Poland",
+    "city": "Zakopane",
+    "start_date": "16.09.2016",
+    "end_date": "19.09.2016"
+  },
+  {
+    "country": "Poland",
+    "city": "Toruń",
+    "start_date": "10.04.2016",
+    "end_date": "11.04.2016"
+  }
+]

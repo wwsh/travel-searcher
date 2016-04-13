@@ -1,0 +1,71 @@
+{% extends '@TravelEngine/layout.html.twig' %}
+
+{% block body %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">BlueOdyssey</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input value="{{ form.vars.value.q|default("") }}" type="text" name="{{ form.q.vars.full_name }}" class="form-control"
+                               placeholder="Lokalizacja...">
+                    </div>
+                    <div class="form-group">
+                        <input value="{{ form.vars.value.start_date|default("") }}" type="text" id="start_date" name="{{ form.start_date.vars.full_name }}"
+                               class="form-control"
+                               placeholder="Początek...">
+                    </div>
+                    <div class="form-group">
+                        <input value="{{ form.vars.value.end_date|default("") }}" type="text" id="end_date" name="{{ form.end_date.vars.full_name }}"
+                               class="form-control" placeholder="Koniec...">
+                    </div>
+
+                    <div class="form-group" id="duration">
+                        {{ form_widget(form.T) }}
+                    </div>
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Szukaj
+                    </button>
+                </form>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+        {% if message is defined %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+
+        <ul class="list-group">
+            {% if result is defined and result.count() > 0 %}
+                {% for r in result %}
+                    <li class="list-group-item">
+                        {% if r.isPromoted() == true %}
+                            <strong>{{ r.getCountry() }}-{{ r.getCity() }} / {{ r.getStartDate() }}-{{ r.getEndDate() }}</strong>
+                        {% else %}
+                            {{ r.getCountry() }}-{{ r.getCity() }} / {{ r.getStartDate() }}-{{ r.getEndDate() }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info">Brak wyników!</div>
+            {% endif %}
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/travelengine/app.js') }}"></script>
+{% endblock %}
